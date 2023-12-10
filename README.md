@@ -21,22 +21,25 @@ Practice visualizing data.
 Practice machine learning modeling techniques.
 Practicing deploying the model for production in Google Cloud Service.
 Project files:
+Main folder:
+1. Project.ipynb – the main notebook where data is analyzed and joined, model selection, training, hyperparameter tunning takes place.
+2. Eda-functions.py – main EDA functions that were used in the project.
+3. Lists.py – contains most of the lists that were created for data aggregations purposes.
+4. Transformation_functions.py – some additional data transformation functions.
+5. Model_functions.py – modeling functions.
+6. Main.py – Flask file for prediction model loading to GCP.
+7. Model.pkl – saved trained model.
+8. Requirements.txt – libraries that needed to be loaded to virtual environment.
+9. App.yaml – loading instructor for gcloud.
 
-Project.ipynb – the main notebook where data is analyzed and joined, model selection, training, hyperparameter tunning takes place.
-Eda-functions.py – main EDA functions that were used in the project.
-Lists.py – contains most of the lists that were created for data aggregations purposes.
-Transformation_functions.py – some additional data transformation functions.
-Model_functions.py – modeling functions.
-Production and testing files:
+Test folder
+1. Test.py – testing file for online and offline testing. For offline testing please # comment the line in the code “app_url = https://loans-404215.lm.r.appspot.com/predict” and uncomment the “# app_url = http://127.0.0.1:8080/predict” – also, make sure that the local host address is the same at your machine – adjust if needed. (Test function is disabled for now to stop GCP charging for resourse using, but can be renewed upon request).
+2. Joined data sample.csv - a sample file randomly created for the testing purposes.
+3. Test data sample.csv - addition test data provided by the competition (for those that have the correct Target variable for test data) 
 
-Main.py – Flask file for prediction model loading to GCP.
-Model.pkl – saved trained model.
-Requirements.txt – libraries that needed to be loaded to virtual environment.
-App.yaml – loading instructor for gcloud.
-Test.py – testing file for online and offline testing. For offline testing please # comment the line in the code “app_url = https://loans-404215.lm.r.appspot.com/predict” and uncomment the “# app_url = http://127.0.0.1:8080/predict” – also, make sure that the local host address is the same at your machine – adjust if needed. (Test function is disabled for now to stop GCP charging for resourse using, but can be renewed upon request).
-For testing purposes, please download the csv file that is created in the Project.ipynb file called “joined_data_sample.csv” and/or “test_data_sample.csv”and place it in the same folder as test.py file.
-Due to large volume data files were not loaded to Github. Data files can be accessed by this link: https://storage.googleapis.com/341-home-credit-default/home-credit-default-risk.zip
+Reading notebook:
 
-Data files should be stored in a newly created folder “Data”, which should be stored in the same folder with project files.
+Data files should be accessed from this location: https://storage.googleapis.com/341-home-credit-default/home-credit-default-risk.zip
+After downloading, store all the files in a newly created folder “Data”, which should be stored in the same folder with project files.
 
 You are free to suggest any changed on how the project could be improved. The project is not bind by any license agreement.
